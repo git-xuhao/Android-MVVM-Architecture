@@ -2,7 +2,7 @@ ext {
 
     android = [
             compileSdkVersion: 26,
-            buildToolsVersion: "26.1.0",
+            buildToolsVersion: "26.0.2",
             minSdkVersion    : 15,
             targetSdkVersion : 26,
             versionCode      : 1,
@@ -10,21 +10,21 @@ ext {
     ]
 
     dependVersion = [
-            androidSupportSdkVersion: "26.1.0",
+            supportSdkVersion: "26.1.0",
             retrofitSdkVersion      : "2.3.0",
             glideSdkVersion         : "4.0.0",
             rxJava                  : "2.1.5",
             rxAndroid               : "2.0.1",
-            lifecycle               : "1.0.0"
+            lifecycle               : "1.0.0",
+            dagger2                 : "2.14.1"
     ]
 
     supportDeps = [
             //--------  support  -------
-            supportv4  : "com.android.support:support-v4:$dependVersion.androidSupportSdkVersion",
-            appcompatv7: "com.android.support:appcompat-v7:$dependVersion.androidSupportSdkVersion",
-            cardview   : "com.android.support:cardview-v7:$dependVersion.androidSupportSdkVersion",
-            design     : "com.android.support:design:$dependVersion.androidSupportSdkVersion",
-            annotations: "com.android.support:support-annotations:$dependVersion.androidSupportSdkVersion"
+            appcompatv7: "com.android.support:appcompat-v7:$dependVersion.supportSdkVersion",
+            cardview   : "com.android.support:cardview-v7:$dependVersion.supportSdkVersion",
+            design     : "com.android.support:design:$dependVersion.supportSdkVersion",
+            annotations: "com.android.support:support-annotations:$dependVersion.supportSdkVersion"
     ]
 
 
@@ -52,6 +52,11 @@ ext {
     lifecycle = "android.arch.lifecycle:extensions:$dependVersion.lifecycle"
     lifecycleCompiler = "android.arch.lifecycle:compiler:$dependVersion.lifecycle"
 
+    //Dagger2
+    dagger2 = "com.google.dagger:dagger-android:$dependVersion.dagger2"
+    dagger2AndroidSupport = "com.google.dagger:dagger-android-support:$dependVersion.dagger2"
+    dagger2AndroidCompiler = "com.google.dagger:dagger-android-processor:$dependVersion.dagger2"
+
     //support libs
     supportLibs = supportDeps.values()
     //网络请求库
@@ -63,7 +68,7 @@ ext {
     otherLibs = [glide]
 
     // APT
-    annotationProcessorLibs = [glideCompiler, lifecycleCompiler]
+    annotationProcessorLibs = [glideCompiler, lifecycleCompiler, dagger2AndroidCompiler]
 
 
 }

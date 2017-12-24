@@ -1,4 +1,4 @@
-package com.hazz.baseframe.mvvm;
+package com.hazz.base.mvvm;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.hazz.baseframe.mvvm.test", appContext.getPackageName());
+        assertEquals("com.hazz.base.mvvm.test", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.hazz.baseframe.mvvm;
+package com.hazz.base.mvvm;
 
 import org.junit.Test;
 
