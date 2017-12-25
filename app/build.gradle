@@ -28,6 +28,16 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     // Support库
+    implementation rootProject.ext.supportLibs
+
+    //官方架构组件 ViewModel and LiveData
+    implementation rootProject.ext.lifecycle
+    // Support库
     implementation project(":base-frame-mvvm")
 }
-
+allprojects {
+    //配置全局的 support 的库的版本不一致冲突
+    configurations {
+        all*.exclude group: 'com.android.support', module: 'support-v4'
+    }
+}

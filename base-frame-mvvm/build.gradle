@@ -23,7 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+   
 }
 
 dependencies {
@@ -48,6 +48,9 @@ dependencies {
     //dagger2
     implementation rootProject.ext.dagger2
     implementation rootProject.ext.dagger2AndroidSupport
+
+    // 自定义 font
+    implementation "uk.co.chrisjenx:calligraphy:2.3.0"
 }
 
 
